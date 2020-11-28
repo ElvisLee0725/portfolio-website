@@ -2,7 +2,6 @@
 @import 'utilities';
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -87,6 +86,9 @@ img {
   }
 
   &-inner {
+    background: $bg-img no-repeat 20% 30% / cover;
+    height: 5.5rem;
+    border-bottom: 3px solid $main-color;
   }
 }
 
@@ -133,6 +135,179 @@ img {
         &:nth-child(odd) {
           background: $light-color;
         }
+      }
+    }
+  }
+
+  &-c {
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5rem;
+      text-align: center;
+
+      &-step {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 24px;
+        background: $main-color;
+        color: set-text-color($main-color);
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        line-height: 15px;
+        padding: 0.7rem;
+        transition: all 1s;
+      }
+
+      &-icon {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        padding: 2rem;
+        text-align: center;
+        background: $dark-color;
+        color: set-text-color($dark-color);
+        border-radius: 50%;
+        transition: all 1s;
+
+        &:hover {
+          background: $main-color;
+          color: set-text-color($main-color);
+          width: 90px;
+          height: 90px;
+          line-height: 90px;
+
+          .process-step {
+            background: $dark-color;
+            color: set-text-color($dark-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+#about {
+  &-a {
+    .about-info {
+      display: grid;
+      grid-template-areas: 'bio-image bio bio' 'aw1 aw2 aw3';
+      grid-gap: 1.2rem;
+
+      // Assign Grid Area
+      .bio-image {
+        grid-area: bio-image;
+      }
+
+      .bio {
+        grid-area: bio;
+        border-left: 3px solid $main-color;
+        padding: 0.8rem;
+      }
+
+      .award-1 {
+        grid-area: aw1;
+      }
+      .award-2 {
+        grid-area: aw2;
+      }
+      .award-3 {
+        grid-area: aw3;
+      }
+
+      .award-1 .fas,
+      .award-2 .fas,
+      .award-3 .fas {
+        color: $main-color;
+        margin: 1rem;
+      }
+    }
+  }
+
+  &-b {
+    .progress {
+      overflow: hidden;
+      height: 20px;
+      background: $medium-color;
+      border-radius: 5px;
+      margin-bottom: 0.3rem;
+
+      div {
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        background: $main-color;
+      }
+    }
+  }
+
+  &-c {
+    .about-logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2rem;
+
+      img {
+        width: 70%;
+      }
+    }
+  }
+
+  &-d {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.5rem;
+
+      ul {
+        list-style: none;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      p {
+        border: 1px solid $medium-color;
+        border-radius: 5px;
+        padding: 0.5rem;
+      }
+
+      img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+#main-footer {
+  background: $dark-color;
+  color: #fff;
+  height: 5rem;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+
+    .social .fab {
+      margin-right: 1rem;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      padding: 0.5rem;
+
+      &:hover {
+        background: $main-color;
       }
     }
   }
